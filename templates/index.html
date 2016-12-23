@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>New York Subway Optimizer</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="../static/css/mdb.min.css" rel="stylesheet">
+
+    <!-- Template styles -->
+    <style rel="stylesheet">
+        /* TEMPLATE STYLES */
+        
+        main {
+            margin-top: 3rem;
+        }
+        
+        .lead {
+            text-align: justify;
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .post-title {
+                margin-top: 1rem;
+            }
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .read-more {
+                text-align: center;
+            }
+        }
+        
+        .extra-margin {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-dark unique-color-dark">
+
+            <!-- Collapse button-->
+            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="container">
+
+                <!--Collapse content-->
+                <div class="collapse navbar-toggleable-xs" id="collapseEx">
+                    <!--Navbar Brand-->
+                <a class="navbar-brand" href="" target="_blank">New York Subway Optimizer</a>
+                    <!--Links-->
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.Collapse content-->
+            </div>
+        </nav>
+        <!--/.Navbar-->
+    </header>
+
+    <main>
+        <!--Main layout-->
+        <!-- <div class="container">
+
+            <section class="m-b-4">
+              
+                <div class="author-box">
+
+                    <div class="row">
+                        <h3 class="h3-responsive text-xs-center">About Project</h3>
+                        <hr>
+                        <div class=" col-xs-12 col-sm-12">
+
+                            <p><strong>TweetMap Project</strong></p>
+                            <p class="hidden-md-down">This project is an experience in developing and deploying a web application using AWS Cloud services. The web application would collect Twitts and do some processing and represent the Twitts on GoogleMaps.</p>
+                        </div>
+
+                    </div>
+                </div>
+                
+
+            </section>
+            
+        </div> -->
+        <!--/.Main layout-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="sel-keywords" style="font-size: 20px;">
+                        Choose your trip:
+                    </label>
+                    <div>
+                        <select class="form-control" id="source" >
+		<option value="242">Van Cortlandt Park-242 Street
+		<option value="238">238 Street
+		<option value="231">231 Street
+		<option value="215">215 Street
+		<option value="207">207 Street
+		<option value="200">Dyckman Street
+		<option value="191">191 Street
+		<option value="181">181 Street
+		<option value="168">168 Street-Washington Heights
+		<option value="157">157 Street
+		<option value="145">145 Street
+		<option value="137">137 Street-City College
+		<option value="125">125 Street
+		<option value="116">116 Street-Columbia University
+		<option value="110">Cathedral Parkway(110 Street)
+		<option value="103">103 Street 
+		<option value="96">96 Street 
+		<option value="86">86 Street 
+		<option value="79">79 Street
+		<option value="72">72 Street 
+		<option value="66">66 Street-Lincoln Center 
+		<option value="59">59 Street-Columbus Circle
+		<option value="50">50 Street
+		<option value="42">Times Square-42 Street
+		<option value="34">34 Street-Penn Station
+		<option value="28">28 Street
+		<option value="23">23 Street
+		<option value="18">18 Street 
+		<option value="14">14 Street
+		<option value="13">Christopher Street-Sheridan Square
+		<option value="12">Houston Street
+		<option value="11">Canal Street
+		<option value="10">Franklin Street
+		<option value="9">Chambers Street
+		<option value="9">Rector Street
+		<option value="1">South Ferry
+		<option value="1">Wakefield-241 Street
+		<option value="1">Nereid Avenue
+		<option value="1">233 Street
+		<option value="1">225 Street
+		<option value="1">219 Street
+		<option value="1">Gun Hill Road
+		<option value="1">Burke Avenue
+		<option value="1">Allerton Avenue
+		<option value="1">Pelham Parkway
+		<option value="1">Bronx Park East
+		<option value="1">West Farms Square-East Tremont Avenue
+		<option value="1">174 Street
+		<option value="1">Freeman Street
+		<option value="1">Simpson Street
+		<option value="1">Jackson Avenue
+		<option value="1">3 Avenue-149 Street
+		<option value="1">135 Street
+		<option value="1">125 Street
+		<option value="1">116 Street/Lenox Avenue
+		<option value="1">Central Park North(110 Street)
+		<option value="1">Park Place
+		<option value="1">Fulton Street
+		<option value="1">Wall Street
+		<option value="1">Clark Street
+		<option value="1">Borough Hall
+		<option value="1">Hoyt Street
+		<option value="1">Nevins Street
+		<option value="1">Atlantic Avenue
+		<option value="1">Bergen Street
+		<option value="1">Grand Army Plaza
+		<option value="1">Eastern Parkway-Brooklyn Museum
+		<option value="1">Franklin Avenue
+		<option value="1">President Street
+		<option value="1">Sterling Street
+		<option value="1">Winthrop Street 
+		<option value="1">Church Avenue
+		<option value="1">Beverly Road
+		<option value="1">Newkirk Avenue
+		<option value="1">Flatbush Avenue-Brooklyn College
+		<option value="1">Harlem-148 Street
+		<option value="1">145 Street
+		<option value="1">Nostrand Avenue
+		<option value="1">Kingston Avenue
+		<option value="1">Sutter Avenue-Rutland Road
+		<option value="1">Saratoga Avenue
+		<option value="1">Rockaway Avenue
+		<option value="1">Junius Street
+		<option value="1">Pennsylvania Avenue
+		<option value="1">Van Siclen Avenue
+		<option value="1">New Lots Avenue
+                        </select>
+                        <select class="form-control" id="destination">
+<option value="242">Van Cortlandt Park-242 Street
+		<option value="238">238 Street
+		<option value="231">231 Street
+		<option value="215">215 Street
+		<option value="207">207 Street
+		<option value="200">Dyckman Street
+		<option value="191">191 Street
+		<option value="181">181 Street
+		<option value="168">168 Street-Washington Heights
+		<option value="157">157 Street
+		<option value="145">145 Street
+		<option value="137">137 Street-City College
+		<option value="125">125 Street
+		<option value="116">116 Street-Columbia University
+		<option value="110">Cathedral Parkway(110 Street)
+		<option value="103">103 Street 
+		<option value="96">96 Street 
+		<option value="86">86 Street 
+		<option value="79">79 Street
+		<option value="72">72 Street 
+		<option value="66">66 Street-Lincoln Center 
+		<option value="59">59 Street-Columbus Circle
+		<option value="50">50 Street
+		<option value="42">Times Square-42 Street
+		<option value="34">34 Street-Penn Station
+		<option value="28">28 Street
+		<option value="23">23 Street
+		<option value="18">18 Street 
+		<option value="14">14 Street
+		<option value="1">Christopher Street-Sheridan Square
+		<option value="1">Houston Street
+		<option value="1">Canal Street
+		<option value="1">Franklin Street
+		<option value="1">Chambers Street
+		<option value="1">Rector Street
+		<option value="1">South Ferry
+		<option value="1">Wakefield-241 Street
+		<option value="1">Nereid Avenue
+		<option value="1">233 Street
+		<option value="1">225 Street
+		<option value="1">219 Street
+		<option value="1">Gun Hill Road
+		<option value="1">Burke Avenue
+		<option value="1">Allerton Avenue
+		<option value="1">Pelham Parkway
+		<option value="1">Bronx Park East
+		<option value="1">West Farms Square-East Tremont Avenue
+		<option value="1">174 Street
+		<option value="1">Freeman Street
+		<option value="1">Simpson Street
+		<option value="1">Intervale Avenue
+		<option value="1">Prospect Avenue
+		<option value="1">Jackson Avenue
+		<option value="1">3 Avenue-149 Street
+		<option value="1">135 Street
+		<option value="1">125 Street
+		<option value="1">116 Street/Lenox Avenue
+		<option value="1">Central Park North(110 Street)
+		<option value="1">Park Place
+		<option value="1">Fulton Street
+		<option value="1">Wall Street
+		<option value="1">Clark Street
+		<option value="1">Borough Hall
+		<option value="1">Hoyt Street
+		<option value="1">Nevins Street
+		<option value="1">Atlantic Avenue
+		<option value="1">Bergen Street
+		<option value="1">Grand Army Plaza
+		<option value="1">Eastern Parkway-Brooklyn Museum
+		<option value="1">Franklin Avenue
+		<option value="1">President Street
+		<option value="1">Sterling Street
+		<option value="1">Winthrop Street 
+		<option value="1">Church Avenue
+		<option value="1">Beverly Road
+		<option value="1">Newkirk Avenue
+		<option value="1">Flatbush Avenue-Brooklyn College
+		<option value="1">Harlem-148 Street
+		<option value="1">145 Street
+		<option value="1">Nostrand Avenue
+		<option value="1">Kingston Avenue
+		<option value="1">Sutter Avenue-Rutland Road
+		<option value="1">Saratoga Avenue
+		<option value="1">Rockaway Avenue
+		<option value="1">Junius Street
+		<option value="1">Pennsylvania Avenue
+		<option value="1">Van Siclen Avenue
+		<option value="1">New Lots Avenue
+                        </select>
+                        <a class="btn btn-unique btn-rounded" onclick="updateData()" style="margin-left: 42px;">Go!</a>
+                    </div>
+                    <br/>
+                </div>
+                <div class="col-md-10">
+                    <!--Google map-->
+                    <div id="map" class="z-depth-1-half map-container wow fadeInRight" style="height: 600px; width: 880px; margin-left: 40px; margin-bottom: 60px;"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only unique-color-dark">
+
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="containter-fluid">
+                Cloud Computing and Big Data 2016 Fall
+            </div>
+        </div>
+        <!--/.Copyright-->
+    </footer>
+    <!--/.Footer-->
+
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="../static/js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../static/js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/js/mdb.min.js"></script>
+
+    <!--Google Maps-->
+    <script src="http://maps.google.com/maps/api/js"></script>
+
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script>
+        function initMap() {
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: {
+                    lat: 40.7128,
+                    lng: -74.0059
+                }
+            });
+
+            // Create an array of alphabetical characters used to label the markers.
+            var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+            // Add some markers to the map.
+            // Note: The code uses the JavaScript Array.prototype.map() method to
+            // create an array of markers based on a given "locations" array.
+            // The map() method here has nothing to do with the Google Maps API.
+            var markers = locations.map(function (location, i) {
+                return new google.maps.Marker({
+                    position: location,
+                    label: labels[i % labels.length]
+                });
+            });
+
+            // Add a marker clusterer to manage the markers.
+            var markerCluster = new MarkerClusterer(map, markers, {
+                imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+            });
+        }
+
+        function updateData() {
+            var source = document.getElementById('source').value
+            var destination = document.getElementById('destination').value
+            var location = []
+            $.ajax({
+                type: 'POST',
+                url: '/tweets',
+                data: {
+                    'source': source,
+                    'destination': destination
+                },
+                dataType: 'json',
+                async: false,
+                success: function (res) {
+                    var loca = res.data;
+                    alert(loca);
+                    var leng = loca.length;
+                },
+                error: function () {
+                    alert('error');
+                }
+            });
+            return location;
+        }
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEayMaBwr2LeQdlGNMHeiD0NXisUE-gZo&callback=initMap">
+    </script>
+</body>
+
+</html>
