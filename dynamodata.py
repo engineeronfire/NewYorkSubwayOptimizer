@@ -113,7 +113,7 @@ def task2(mtaTable):
 
 if __name__ == "__main__":
     try:
-        mtaUpdateObj = mtaUpdates('20778f9857669c6fdf7fbd4e4f07fd30')
+        mtaUpdateObj = mtaUpdates('')
         table = connect()
         t1 = threading.Thread(target=task1, args=(table,mtaUpdateObj))
         t1.setDaemon(True)
